@@ -1,0 +1,144 @@
+#include <iostream>
+using namespace std;
+
+char player1;
+char player2;
+char player_1();
+char player_2();	
+int i,j,x,o;	
+char matrix[3][3]={{'1','2','3'},{'4','5','6'},{'7','8','9'}};
+	
+	char player_1(){
+	cout<<"player 1 is X. it is your turn."<<endl;
+		player1=x;
+		cin>>x;	
+					
+		if(x==1){matrix[0][0]='X'; cout<<matrix[0][0];}
+			else cout<<matrix[0][0];
+			
+		if(x==2){matrix[0][1]='X'; cout<<matrix[0][1];}
+			else cout<<matrix[0][1];
+			
+		if(x==3){matrix[0][2]='X'; cout<<matrix[0][2]<<endl;}
+			else cout<<matrix[0][2]<<endl;
+		
+		if(x==4){matrix[1][0]='X'; cout<<matrix[1][0];}
+			else cout<<matrix[1][0];
+		
+		if(x==5){matrix[1][1]='X'; cout<<matrix[1][1];}
+			else cout<<matrix[1][1];
+		
+		if(x==6){matrix[1][2]='X'; cout<<matrix[1][2]<<endl;}
+			else cout<<matrix[1][2]<<endl;
+		
+		if(x==7){matrix[2][0]='X'; cout<<matrix[2][0];}
+			else cout<<matrix[2][0];
+		
+		if(x==8){matrix[2][1]='X'; cout<<matrix[2][1];}
+			else cout<<matrix[2][1];
+		
+		if(x==9){matrix[2][2]='X'; cout<<matrix[2][2]<<endl;}
+			else cout<<matrix[2][2]<<endl;
+	}
+char player_2(){
+	cout<<"player 2 is O. it is your turn."<<endl;
+		player2=o;
+		cin>>o;	
+		if(o==1){matrix[0][0]='O'; cout<<matrix[0][0];}
+			else cout<<matrix[0][0];
+		
+		if(o==2){matrix[0][1]='O'; cout<<matrix[0][1];}
+			else cout<<matrix[0][1];
+		
+		if(o==3){matrix[0][2]='O'; cout<<matrix[0][2]<<endl;}
+			else cout<<matrix[0][2]<<endl;
+		
+		if(o==4){matrix[1][0]='O'; cout<<matrix[1][0];}
+			else cout<<matrix[1][0];
+		
+		if(o==5){matrix[1][1]='O'; cout<<matrix[1][1];}
+			else cout<<matrix[1][1];
+		
+		if(o==6){matrix[1][2]='O'; cout<<matrix[1][2]<<endl;}
+			else cout<<matrix[1][2]<<endl;
+		
+		if(o==7){matrix[2][0]='O'; cout<<matrix[2][0];}
+			else cout<<matrix[2][0];
+		
+		if(o==8){matrix[2][1]='O'; cout<<matrix[2][1];}
+			else cout<<matrix[2][1];
+		
+		if(o==9){matrix[2][2]='O'; cout<<matrix[2][2]<<endl;}
+			else cout<<matrix[2][2]<<endl;}
+			
+player_1_victor(){
+	cout<<"player one is the winner";
+}
+
+player_2_victor(){
+	cout<<"player two is the winner";
+}
+
+bool protection(){
+
+
+if (matrix[0][0]=='X'&&matrix[0][1]=='X'&&matrix[0][2]=='X') {player_1_victor();return true;}
+if (matrix[0][0]=='O'&&matrix[0][1]=='O'&&matrix[0][2]=='O') {player_2_victor();return true;} 
+	
+	
+if (matrix[1][0]=='X'&&matrix[1][1]=='X'&&matrix[1][2]=='X') {player_1_victor();return true;}
+if (matrix[1][0]=='O'&&matrix[1][1]=='O'&&matrix[1][2]=='O') {player_2_victor();return true;}
+
+	
+if (matrix[2][0]=='X'&&matrix[2][1]=='X'&&matrix[2][2]=='X') {player_1_victor();return true;} 
+if (matrix[2][0]=='O'&&matrix[2][1]=='O'&&matrix[2][2]=='O') {player_2_victor();return true;}  
+		
+			
+if (matrix[0][0]=='X'&&matrix[1][0]=='X'&&matrix[2][0]=='X') {player_1_victor();return true;} 	
+if (matrix[0][0]=='O'&&matrix[1][0]=='O'&&matrix[2][0]=='O') {player_2_victor();return true;} 
+	
+		
+if (matrix[0][1]=='X'&&matrix[1][1]=='X'&&matrix[2][1]=='X') {player_1_victor();return true;}	
+if (matrix[0][1]=='O'&&matrix[1][1]=='O'&&matrix[2][1]=='O') {player_2_victor();return true;}
+
+
+if (matrix[0][2]=='X'&&matrix[1][2]=='X'&&matrix[2][2]=='X') {player_1_victor();return true;}
+if (matrix[0][2]=='O'&&matrix[1][2]=='O'&&matrix[2][2]=='O') {player_2_victor();return true;}
+
+		
+if (matrix[0][0]=='X'&&matrix[1][1]=='X'&&matrix[2][2]=='X') {player_1_victor();return true;}
+if (matrix[0][0]=='O'&&matrix[1][1]=='O'&&matrix[2][2]=='O') {player_2_victor();return true;}
+
+					
+if (matrix[0][2]=='X'&&matrix[1][1]=='X'&&matrix[2][0]=='X') {player_1_victor();return true;}
+if (matrix[0][2]=='O'&&matrix[1][1]=='O'&&matrix[2][0]=='O') {player_2_victor();return true;}
+
+else return false;
+
+/*1 square_1= matrix[0][0] square_2= matrix[0][1];square_3= matrix[0][2];
+    square_4= matrix[1][0];square_5= matrix[1][1];square_6= matrix[1][2];
+    square_7= matrix[2][0];square_8= matrix[2][1];square_9= matrix[2][2];*/
+
+}
+
+int main(){
+
+	(player1 || player2);
+	!(player1&&player2);
+	
+	for(i=0;i<3;i++){
+		for(j=0;j<3;j++){
+		cout<<matrix[i][j]<<" ";
+		}cout<<endl;}
+	 do{
+	 player_1();if (protection()==true)break;
+	 player_2();if (protection()==true)break;
+	 }while (protection()==false);
+	
+	
+		
+		
+		
+	
+	return 0;
+}
